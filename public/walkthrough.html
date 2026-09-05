@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkthrough — 2ª Entrega P.I.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            color: #1a1a2e;
+            background: #fff;
+            line-height: 1.7;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            border-bottom: 3px solid #6C63FF;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d2d44;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            border-left: 4px solid #6C63FF;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #3a3a5c;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        p { margin-bottom: 10px; font-size: 0.92rem; }
+        strong { font-weight: 600; }
+        hr { border: none; border-top: 1px solid #e0e0e0; margin: 28px 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            font-size: 0.85rem;
+        }
+        th {
+            background: #6C63FF;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        tr:nth-child(even) td { background: #f8f8fc; }
+        ul, ol { padding-left: 22px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; font-size: 0.9rem; }
+        code {
+            background: #f0f0f8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #e0e0ef;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 12px 0 20px;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .screenshot-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .screenshot-item img {
+            width: 100%;
+            display: block;
+        }
+        .screenshot-item .caption {
+            padding: 8px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #666;
+            background: #f8f8fc;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+        .badge-purple { background: #EDE9FF; color: #6C63FF; }
+        .header-meta {
+            color: #888;
+            font-size: 0.82rem;
+            margin-bottom: 24px;
+        }
+        .callout {
+            background: #FFF8E1;
+            border-left: 4px solid #FFB347;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            font-size: 0.88rem;
+        }
+        .callout strong { color: #E5A035; }
+        .steps-list { counter-reset: step; list-style: none; padding-left: 0; }
+        .steps-list li {
+            counter-increment: step;
+            padding: 8px 0 8px 36px;
+            position: relative;
+        }
+        .steps-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            width: 26px;
+            height: 26px;
+            background: #6C63FF;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        @media print {
+            body { padding: 20px 30px; }
+            .screenshot-grid { break-inside: avoid; }
+            h2 { break-after: avoid; }
+            pre { break-inside: avoid; }
+        }
+        .print-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #6C63FF;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+            z-index: 100;
+        }
+        .print-btn:hover { background: #5A52E0; }
+        @media print { .print-btn { display: none; } }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Salvar como PDF</button>
+
+    <h1>Walkthrough — 2ª Entrega P.I.</h1>
+    <p class="header-meta">Sistema de Gestão Universitária • Projeto Integrador — 4º Semestre TADS/TSI • SENAC EAD 2026</p>
+
+    <h2>🎯 O que foi implementado</h2>
+    <p>O sistema <strong>UniGestão</strong> foi desenvolvido como prova de conceito completa, cobrindo os <strong>4 cenários</strong> definidos na 1ª entrega:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cenário</th>
+                <th>Funcionalidades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Matricular Alunos</strong></td>
+                <td>Cadastro com validação de idade ≥ 18, matrícula em curso, geração automática de boleto</td>
+            </tr>
+            <tr>
+                <td><strong>Consultar Docentes</strong></td>
+                <td>Listagem alfabética, busca por nome, visualização de disciplinas, ativar/inativar</td>
+            </tr>
+            <tr>
+                <td><strong>Inativar Fornecedores</strong></td>
+                <td>Verificação de pendências (pedidos em aberto), confirmação, reativação</td>
+            </tr>
+            <tr>
+                <td><strong>Gerenciar Notas</strong></td>
+                <td>Seleção por curso/disciplina, edição inline, bloqueio de notas consolidadas e matrículas trancadas</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>🛠️ Stack Tecnológica</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Camada</th>
+                <th>Tecnologia</th>
+                <th>Justificativa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Frontend</td>
+                <td>HTML5 + CSS3 + JavaScript</td>
+                <td>SPA com navegação sem recarregamento</td>
+            </tr>
+            <tr>
+                <td>Backend</td>
+                <td>Node.js + Express</td>
+                <td>API REST com 18+ endpoints</td>
+            </tr>
+            <tr>
+                <td>Banco de Dados</td>
+                <td>SQLite (sql.js)</td>
+                <td>Zero configuração, auto-inicialização</td>
+            </tr>
+            <tr>
+                <td>Design</td>
+                <td>Dark Theme + Glassmorphism</td>
+                <td>Interface premium e moderna</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>📁 Estrutura do Projeto</h2>
+    <pre>sistema-universitario/
+├── server.js                       # Servidor Express
+├── package.json                    # Dependências
+├── .env / .env.example             # Configuração
+├── .gitignore                      # Ignora node_modules e db
+├── README.md                       # Documentação com instruções
+├── database/
+│   ├── schema.sql                  # 11 tabelas com constraints
+│   └── seed.sql                    # 70+ registros de exemplo
+├── src/
+│   ├── db.js                       # Módulo SQLite com helpers
+│   ├── middleware/errorHandler.js   # Tratamento de erros
+│   └── routes/
+│       ├── alunos.js               # 5 endpoints
+│       ├── docentes.js             # 4 endpoints
+│       ├── fornecedores.js         # 4 endpoints
+│       ├── notas.js                # 3 endpoints
+│       ├── cursos.js               # 2 endpoints
+│       └── boletos.js              # 2 endpoints
+└── public/
+    ├── index.html                  # 6 páginas SPA
+    ├── css/style.css               # ~600 linhas de CSS
+    └── js/
+        ├── app.js                  # Core, API, toast, modal
+        ├── alunos.js               # Cadastro + matrícula + lista
+        ├── docentes.js             # Lista + detalhe + toggle
+        ├── fornecedores.js         # Lista + inativação
+        └── notas.js                # Seleção + edição inline</pre>
+
+    <hr>
+
+    <h2>📊 Endpoints da API</h2>
+    <table>
+        <thead>
+            <tr><th>Método</th><th>Rota</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/dashboard</code></td><td>Estatísticas gerais</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/alunos</code></td><td>Listar alunos</td></tr>
+            <tr><td><span class="badge badge-purple">POST</span></td><td><code>/api/alunos</code></td><td>Cadastrar aluno</td></tr>
+            <tr><td><span class="badge badge-purple">POST</span></td><td><code>/api/alunos/matricula</code></td><td>Realizar matrícula</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/docentes</code></td><td>Listar docentes</td></tr>
+            <tr><td><span class="badge badge-purple">PATCH</span></td><td><code>/api/docentes/:id/status</code></td><td>Ativar/Inativar docente</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/fornecedores</code></td><td>Listar fornecedores</td></tr>
+            <tr><td><span class="badge badge-purple">PATCH</span></td><td><code>/api/fornecedores/:id/inativar</code></td><td>Inativar fornecedor</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/notas/disciplina/:id</code></td><td>Notas da disciplina</td></tr>
+            <tr><td><span class="badge badge-purple">PUT</span></td><td><code>/api/notas</code></td><td>Lançar/editar notas</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/cursos</code></td><td>Listar cursos</td></tr>
+            <tr><td><span class="badge badge-purple">GET</span></td><td><code>/api/boletos</code></td><td>Listar boletos</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>✅ Testes Realizados</h2>
+    <ul>
+        <li><strong>API Dashboard</strong>: Retorna corretamente 4 alunos, 4 docentes, 4 fornecedores, 4 cursos, 3 matrículas ativas</li>
+        <li><strong>API Alunos</strong>: Listagem, busca e detalhamento funcionando</li>
+        <li><strong>Frontend completo</strong>: Todas as 6 páginas carregam corretamente com dados do banco</li>
+        <li><strong>Navegação SPA</strong>: Transições suaves entre páginas</li>
+        <li><strong>Design responsivo</strong>: Interface adaptável para dispositivos menores</li>
+    </ul>
+
+    <hr>
+
+    <h2>📋 Próximos Passos</h2>
+    <ol class="steps-list">
+        <li><strong>Copiar o projeto para uma pasta local</strong> para funcionar com npm</li>
+        <li><strong>Criar repositório no GitHub</strong> e subir os arquivos</li>
+        <li><strong>Adicionar todos os membros</strong> como colaboradores no repositório</li>
+        <li><strong>Gravar o vídeo de 1 min</strong> mostrando o sistema funcionando</li>
+        <li><strong>Entregar</strong> até 08/09 às 23h55</li>
+    </ol>
+
+</body>
+</html>

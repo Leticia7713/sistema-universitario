@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Gestão Universitária - Gerenciamento de alunos, docentes, fornecedores e notas">
+    <title>UniGestão — Sistema de Gestão Universitária</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">UniGestão</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-page="alunos">
+                <span class="nav-icon">👨‍🎓</span>
+                <span class="nav-text">Matricular Alunos</span>
+            </a>
+            <a href="#" class="nav-item" data-page="consultar-alunos">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Consultar Alunos</span>
+            </a>
+            <a href="#" class="nav-item" data-page="notas">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Gerenciar Notas</span>
+            </a>
+            <a href="#" class="nav-item" data-page="docentes">
+                <span class="nav-icon">👨‍🏫</span>
+                <span class="nav-text">Consultar Docentes</span>
+            </a>
+            <a href="#" class="nav-item" data-page="fornecedores">
+                <span class="nav-icon">🏢</span>
+                <span class="nav-text">Gestão de Fornecedores</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <span class="user-avatar">👤</span>
+                <div class="user-details">
+                    <span class="user-name">Administrador</span>
+                    <span class="user-role">Admin Geral</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <h1 class="page-title" id="pageTitle">Dashboard</h1>
+            <div class="header-actions">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area" id="contentArea">
+            <!-- Dashboard Page -->
+            <section class="page active" id="page-dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card" style="--accent: #6C63FF">
+                        <div class="stat-icon">👨‍🎓</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statAlunos">0</span>
+                            <span class="stat-label">Alunos Cadastrados</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="--accent: #00D9A6">
+                        <div class="stat-icon">👨‍🏫</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statDocentes">0</span>
+                            <span class="stat-label">Docentes Ativos</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="--accent: #FF6584">
+                        <div class="stat-icon">🏢</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statFornecedores">0</span>
+                            <span class="stat-label">Fornecedores</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="--accent: #FFB347">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statCursos">0</span>
+                            <span class="stat-label">Cursos Ativos</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="--accent: #45B7D1">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statMatriculas">0</span>
+                            <span class="stat-label">Matrículas Ativas</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="--accent: #F093FB">
+                        <div class="stat-icon">💳</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="statBoletos">0</span>
+                            <span class="stat-label">Boletos Pendentes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3 class="card-title">📋 Matrículas Recentes</h3>
+                        <div class="card-body" id="recentMatriculas">
+                            <p class="empty-state">Carregando...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">💳 Boletos Recentes</h3>
+                        <div class="card-body" id="recentBoletos">
+                            <p class="empty-state">Carregando...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Matricular Alunos Page -->
+            <section class="page" id="page-alunos">
+                <div class="card">
+                    <h3 class="card-title">➕ Cadastrar Novo Aluno</h3>
+                    <form id="formAluno" class="form-grid">
+                        <div class="form-group">
+                            <label for="alunoNome">Nome Completo *</label>
+                            <input type="text" id="alunoNome" required placeholder="Nome do aluno">
+                        </div>
+                        <div class="form-group">
+                            <label for="alunoEmail">Email *</label>
+                            <input type="email" id="alunoEmail" required placeholder="email@exemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="alunoCpf">CPF *</label>
+                            <input type="text" id="alunoCpf" required placeholder="000.000.000-00" maxlength="14">
+                        </div>
+                        <div class="form-group">
+                            <label for="alunoNasc">Data de Nascimento *</label>
+                            <input type="date" id="alunoNasc" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alunoTelefone">Telefone</label>
+                            <input type="text" id="alunoTelefone" placeholder="(11) 91234-5678">
+                        </div>
+                        <div class="form-group">
+                            <label for="alunoEndereco">Endereço</label>
+                            <input type="text" id="alunoEndereco" placeholder="Rua, número – Cidade">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Cadastrar Aluno</button>
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card mt-4">
+                    <h3 class="card-title">📋 Realizar Matrícula</h3>
+                    <form id="formMatricula" class="form-grid">
+                        <div class="form-group">
+                            <label for="matriculaAluno">Aluno *</label>
+                            <select id="matriculaAluno" required>
+                                <option value="">Selecione um aluno</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="matriculaCurso">Curso *</label>
+                            <select id="matriculaCurso" required>
+                                <option value="">Selecione um curso</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Realizar Matrícula</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Consultar Alunos Page -->
+            <section class="page" id="page-consultar-alunos">
+                <div class="card">
+                    <div class="card-header-flex">
+                        <h3 class="card-title">👨‍🎓 Lista de Alunos</h3>
+                        <div class="search-bar">
+                            <input type="text" id="buscaAluno" placeholder="Buscar por nome, CPF ou email..." class="search-input">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="tabelaAlunos">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Email</th>
+                                    <th>Telefone</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyAlunos">
+                                <tr><td colspan="6" class="empty-state">Carregando...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gerenciar Notas Page -->
+            <section class="page" id="page-notas">
+                <div class="card">
+                    <h3 class="card-title">📝 Gerenciar Notas</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="notaCurso">Curso</label>
+                            <select id="notaCurso">
+                                <option value="">Selecione um curso</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notaDisciplina">Disciplina</label>
+                            <select id="notaDisciplina" disabled>
+                                <option value="">Selecione o curso primeiro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4" id="notasContainer" style="display:none;">
+                    <div class="card-header-flex">
+                        <h3 class="card-title" id="notaDisciplinaTitulo">Notas da Disciplina</h3>
+                        <span class="badge badge-info" id="notaDocenteNome"></span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Aluno</th>
+                                    <th>Matrícula</th>
+                                    <th>Nota 1</th>
+                                    <th>Nota 2</th>
+                                    <th>Média</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyNotas">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Consultar Docentes Page -->
+            <section class="page" id="page-docentes">
+                <div class="card">
+                    <div class="card-header-flex">
+                        <h3 class="card-title">👨‍🏫 Quadro de Docentes</h3>
+                        <div class="search-bar">
+                            <input type="text" id="buscaDocente" placeholder="Buscar por nome..." class="search-input">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Contrato</th>
+                                    <th>Admissão</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyDocentes">
+                                <tr><td colspan="6" class="empty-state">Carregando...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gestão de Fornecedores Page -->
+            <section class="page" id="page-fornecedores">
+                <div class="card">
+                    <div class="card-header-flex">
+                        <h3 class="card-title">🏢 Gestão de Fornecedores</h3>
+                        <div class="search-bar">
+                            <input type="text" id="buscaFornecedor" placeholder="Buscar por nome ou CNPJ..." class="search-input">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CNPJ</th>
+                                    <th>Categoria</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyFornecedores">
+                                <tr><td colspan="6" class="empty-state">Carregando...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal Genérico -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalContent">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Detalhes</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+            <div class="modal-footer" id="modalFooter">
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/alunos.js"></script>
+    <script src="js/docentes.js"></script>
+    <script src="js/fornecedores.js"></script>
+    <script src="js/notas.js"></script>
+</body>
+</html>

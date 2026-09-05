@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão do Projeto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            color: #1a1a2e;
+            background: #fff;
+            line-height: 1.7;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            border-bottom: 3px solid #6C63FF;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d2d44;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            border-left: 4px solid #6C63FF;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #3a3a5c;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        p { margin-bottom: 10px; font-size: 0.92rem; }
+        strong { font-weight: 600; }
+        hr { border: none; border-top: 1px solid #e0e0e0; margin: 28px 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            font-size: 0.85rem;
+        }
+        th {
+            background: #6C63FF;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+        tr:nth-child(even) td { background: #f8f8fc; }
+        ul, ol { padding-left: 22px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; font-size: 0.9rem; }
+        code {
+            background: #f0f0f8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #e0e0ef;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 12px 0 20px;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        .callout {
+            background: #FFF8E1;
+            border-left: 4px solid #FFB347;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            font-size: 0.88rem;
+        }
+        @media print {
+            body { padding: 20px 30px; }
+            h2 { break-after: avoid; }
+            pre { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ Revisão do Projeto — Conformidade com os Requisitos da Entrega</h1>
+
+    <h2>Requisitos e Status</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Requisito da Entrega</th>
+                <th>Pontos</th>
+                <th>Status</th>
+                <th>Detalhe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Revisitar o projeto e definir a prova de conceito</td>
+                <td>1,0</td>
+                <td>✅ Pronto</td>
+                <td>Seção "Revisita do Projeto" adicionada ao README com justificativa</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Preparação do ambiente de desenvolvimento</td>
+                <td>2,0</td>
+                <td>✅ Pronto</td>
+                <td>Node.js + Express + SQLite + HTML/CSS/JS — tudo configurado</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Desenvolvimento do frontend</td>
+                <td>2,0</td>
+                <td>✅ Pronto</td>
+                <td>SPA com 6 páginas, dark theme, glassmorphism, responsivo</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Desenvolvimento do backend (com repositório de dados)</td>
+                <td>2,0</td>
+                <td>✅ Pronto</td>
+                <td>API REST com 20 endpoints + SQLite com 11 tabelas</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Vídeo de até 1 minuto</td>
+                <td>1,0</td>
+                <td>⚠️ <strong>Vocês precisam gravar</strong></td>
+                <td>Gravar tela mostrando o sistema funcionando</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Subir no GitHub</td>
+                <td>2,0</td>
+                <td>⚠️ <strong>Precisa configurar</strong></td>
+                <td>Git não está instalado. Instruções abaixo</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Pontuação potencial: 10,0 / 10,0</strong> (após vídeo + GitHub)</p>
+
+    <hr>
+
+    <h2>🔍 Checklist Detalhado</h2>
+
+    <h3>✅ Requisito 1 — Revisita do Projeto (1,0 pt)</h3>
+    <ul>
+        <li>[x] Seção "Revisita do Projeto" no README</li>
+        <li>[x] Justificativa de por que os 4 cenários foram escolhidos</li>
+        <li>[x] Tabela mapeando cenários da 1ª entrega → implementação na 2ª</li>
+        <li>[x] Conexão explícita entre modelagem (DDL/DER) e código funcional</li>
+    </ul>
+
+    <h3>✅ Requisito 2 — Preparação do Ambiente (2,0 pts)</h3>
+    <ul>
+        <li>[x] Frontend: HTML5 + CSS3 + JavaScript (vanilla)</li>
+        <li>[x] Backend: Node.js v18+ com Express</li>
+        <li>[x] Banco de Dados: SQLite via sql.js (zero configuração)</li>
+        <li>[x] Dependências documentadas no <code>package.json</code></li>
+        <li>[x] Instruções de instalação no README</li>
+        <li>[x] <code>.env.example</code> com variáveis de ambiente</li>
+    </ul>
+
+    <h3>✅ Requisito 3 — Frontend (2,0 pts)</h3>
+    <ul>
+        <li>[x] Dashboard com estatísticas em tempo real</li>
+        <li>[x] Tela de Matricular Alunos (formulário de cadastro + matrícula)</li>
+        <li>[x] Tela de Consultar Alunos (tabela + busca + detalhe em modal)</li>
+        <li>[x] Tela de Consultar Docentes (tabela + busca + detalhe + ativar/inativar)</li>
+        <li>[x] Tela de Gestão de Fornecedores (tabela + inativação com verificação)</li>
+        <li>[x] Tela de Gerenciar Notas (seleção curso/disciplina + edição inline)</li>
+        <li>[x] Design premium com dark theme e glassmorphism</li>
+        <li>[x] SPA com navegação sem recarregamento</li>
+        <li>[x] Sistema de notificações (toasts)</li>
+        <li>[x] Modais de confirmação</li>
+        <li>[x] Máscara de CPF</li>
+        <li>[x] Responsivo (funciona em celular)</li>
+    </ul>
+
+    <h3>✅ Requisito 4 — Backend + Banco de Dados (2,0 pts)</h3>
+    <ul>
+        <li>[x] 11 tabelas no banco (pessoa, aluno, docente, fornecedor, curso, disciplina, matricula, nota, pedido_compra, boleto, usuario_adm)</li>
+        <li>[x] 20 endpoints de API REST</li>
+        <li>[x] Schema e seed baseados na 1ª entrega</li>
+        <li>[x] Banco inicializa automaticamente na primeira execução</li>
+        <li>[x] <strong>Regras de negócio testadas e funcionando:</strong>
+            <ul>
+                <li>✅ Validação de idade ≥ 18 anos</li>
+                <li>✅ Geração automática de boleto ao matricular</li>
+                <li>✅ Bloqueio de inativação de fornecedor com pendências</li>
+                <li>✅ Bloqueio de edição de nota consolidada</li>
+                <li>✅ Bloqueio de nota para matrícula trancada</li>
+                <li>✅ Toggle ativar/inativar docente</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>⚠️ Requisito 5 — Vídeo (1,0 pt)</h3>
+    <div class="callout">
+        <strong>IMPORTANTE:</strong> Vocês precisam gravar um vídeo de no máximo 1 minuto mostrando o sistema funcionando.
+    </div>
+    <p><strong>Sugestão de roteiro (60 segundos):</strong></p>
+    <ol>
+        <li><strong>(10s)</strong> Abrir o terminal, rodar <code>npm start</code>, mostrar o servidor iniciando</li>
+        <li><strong>(10s)</strong> Abrir <code>http://localhost:3000</code>, mostrar o Dashboard com as estatísticas</li>
+        <li><strong>(10s)</strong> Ir em "Matricular Alunos", preencher o formulário e cadastrar um aluno</li>
+        <li><strong>(10s)</strong> Ir em "Consultar Alunos", buscar o aluno cadastrado</li>
+        <li><strong>(10s)</strong> Ir em "Gerenciar Notas", selecionar disciplina e lançar uma nota</li>
+        <li><strong>(10s)</strong> Ir em "Gestão de Fornecedores", tentar inativar um com pendências (mostrar bloqueio)</li>
+    </ol>
+    <p><strong>Como gravar:</strong> Windows: <code>Win + G</code> abre a Xbox Game Bar → clique em Capturar → Iniciar gravação. Ou use o OBS Studio (gratuito). Salve como MP4.</p>
+
+    <h3>⚠️ Requisito 6 — GitHub (2,0 pts)</h3>
+    <div class="callout">
+        <strong>IMPORTANTE:</strong> Precisa instalar o Git e criar o repositório no GitHub.
+    </div>
+    <p><strong>O que o professor exige no GitHub:</strong></p>
+    <ul>
+        <li>[x] Códigos-fonte do projeto (prontos)</li>
+        <li>[ ] Todos os participantes como membros do projeto</li>
+        <li>[ ] Histórico de colaborações de cada membro</li>
+        <li>[x] README.md com nomes e instruções (pronto)</li>
+    </ul>
+
+    <hr>
+
+    <h2>📦 Como Compartilhar com a Equipe</h2>
+
+    <h3>Opção 1: Via ZIP (imediata)</h3>
+    <p>O ZIP já está pronto. Envie o ZIP para a equipe. Cada membro deve:</p>
+    <pre>
+1. Extrair o ZIP
+2. Abrir terminal na pasta extraída
+3. npm install
+4. npm start
+5. Abrir http://localhost:3000</pre>
+
+    <h3>Opção 2: Via GitHub (necessário para nota máxima)</h3>
+    <p><strong>Passo 1 — Instalar Git:</strong> Baixe em https://git-scm.com/download/win. Instale com as opções padrão e reinicie o VS Code / terminal.</p>
+    <p><strong>Passo 2 — Criar conta no GitHub (cada membro):</strong> Acesse https://github.com/signup e crie uma conta com email pessoal.</p>
+    <p><strong>Passo 3 — Um membro cria o repositório:</strong> No GitHub, clique em "New repository". Nome: <code>sistema-universitario</code>. Marque Public. NÃO adicione README nem .gitignore. Clique "Create repository".</p>
+    <p><strong>Passo 4 — Subir o código:</strong></p>
+    <pre>
+cd C:\projetos\sistema-universitario
+git init
+git add .
+git commit -m "Entrega 2 - Sistema de Gestão Universitária"
+git branch -M main
+git remote add origin https://github.com/SEU_USUARIO/sistema-universitario.git
+git push -u origin main</pre>
+    <p><strong>Passo 5 — Adicionar membros:</strong> No repositório GitHub → Settings → Collaborators. Adicione cada membro pelo username do GitHub. Cada membro aceita o convite.</p>
+    <p><strong>Passo 6 — Cada membro faz um commit:</strong></p>
+    <pre>
+git clone https://github.com/SEU_USUARIO/sistema-universitario.git
+cd sistema-universitario
+# Editar qualquer arquivo (ex: adicionar um comentário)
+git add .
+git commit -m "Contribuição de [NOME DO MEMBRO]"
+git push</pre>
+
+    <hr>
+
+    <h2>📋 Resumo — O Que Falta Fazer</h2>
+    <table>
+        <thead>
+            <tr><th>Tarefa</th><th>Quem</th><th>Prioridade</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Instalar Git</td><td>Um membro</td><td>🔴 Alta</td></tr>
+            <tr><td>Criar repositório GitHub</td><td>Um membro</td><td>🔴 Alta</td></tr>
+            <tr><td>Subir código no GitHub</td><td>Um membro</td><td>🔴 Alta</td></tr>
+            <tr><td>Adicionar todos como colaboradores</td><td>O dono do repo</td><td>🔴 Alta</td></tr>
+            <tr><td>Cada membro fazer 1 commit</td><td>Todos</td><td>🔴 Alta</td></tr>
+            <tr><td>Gravar vídeo de 1 min</td><td>Qualquer membro</td><td>🔴 Alta</td></tr>
+            <tr><td>Subir vídeo (YouTube privado ou MP4 no GitHub)</td><td>Qualquer membro</td><td>🟡 Média</td></tr>
+            <tr><td>Entregar até 08/09 às 23h55</td><td>Todos</td><td>🔴 <strong>Prazo final</strong></td></tr>
+        </tbody>
+    </table>
+</body>
+</html>

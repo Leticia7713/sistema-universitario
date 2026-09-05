@@ -1,0 +1,22 @@
+{
+  "name": "sistema-universitario",
+  "version": "1.0.0",
+  "description": "Sistema de Gestão Universitária - Projeto Integrador SENAC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "universidade",
+    "gestao",
+    "academico"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "sql.js": "^1.14.2"
+  }
+}
