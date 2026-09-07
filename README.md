@@ -14,7 +14,7 @@
 | Fabian Rossetti |
 | Leticia Soares da Silva |
 | Marina Muttoni Roncatto |
-| Rodrigo De Luca |
+| Rodrigo de Luca |
 
 **Professor orientador:** Adriano Milanez
 
