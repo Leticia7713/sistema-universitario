@@ -16,17 +16,22 @@
 | Marina Muttoni Roncatto |
 | Rodrigo De Luca |
 
-**Professor orientador:** Gustavo Calixto
+**Professor orientador:** Adriano Milanez
 
 ---
 
 ## 🔄 Revisita do Projeto (1ª Entrega → 2ª Entrega)
 
-Na primeira etapa, desenvolvemos toda a ideação do sistema de gestão universitária, incluindo:
-- **Diagrama de Casos de Uso** com 4 cenários principais
-- **Diagrama de Classes** com herança (Pessoa → Aluno / Docente / Fornecedor)
-- **Modelagem de Dados** com DER conceitual, DDL e dados de exemplo
-- **Protótipo de página web** em HTML estático
+> **⚠️ Nota sobre a Alteração do Escopo:**  
+> Inicialmente, o projeto visava desenvolver uma plataforma digital de operações bancárias integradas ao WhatsApp para o público idoso, com autenticação facial e chatbot guiado por áudio. Devido à acentuada complexidade técnica e à necessidade de integração com grandes plataformas proprietárias (Meta/WhatsApp Business API e ferramentas externas de biometria) para viabilizar uma Prova de Conceito funcional no prazo da 2ª entrega, o grupo optou por redefinir o tema para o **Sistema de Gestão Universitária (UniGestão)**.
+
+Na primeira etapa, desenvolvemos a especificação, ideação e fundamentação do sistema de gestão universitária conforme as normas ABNT, incluindo:
+
+- **1. Visão Geral do Produto (Contextualização):** Mapeamento do problema identificado, público-alvo, contexto de uso, justificativa da solução, definição da solução como aplicação Web responsiva e descrição das principais funcionalidades previstas.
+- **2. Definição das Partes Interessadas (Stakeholders):** Mapeamento do papel e das necessidades de Administradores, Docentes, Discentes, Gestores Financeiros/Compras e Equipe de TI.
+- **3. Personas:** Criação detalhada das personas *Carlos Andrade* (Administrador Acadêmico) e *Profa. Beatriz Lima* (Docente), abordando perfis, objetivos, necessidades, dores e nível de familiaridade tecnológica.
+- **4. Jornada do Usuário:** Mapeamento em etapas das jornadas operacionais das personas, desde a matrícula e emissão de boletos até a consulta de turmas e lançamento de notas.
+
 
 ### Prova de Conceito Escolhida
 
@@ -63,6 +68,39 @@ Sistema web de gestão universitária desenvolvido como prova de conceito do Pro
 - ✅ Docentes podem ser **ativados/inativados** com confirmação
 
 ---
+
+## 📋 Sobre o Projeto
+
+Sistema web de gestão universitária desenvolvido como prova de conceito do Projeto Integrador. A aplicação permite:
+
+- **Matricular Alunos** — Cadastro de novos alunos com validação de idade (≥ 18 anos) e geração automática de boleto
+- **Consultar Alunos** — Busca por nome, CPF ou email, com visualização de matrículas
+- **Consultar Docentes** — Listagem alfabética, busca por nome, visualização de disciplinas e ativação/inativação
+- **Gestão de Fornecedores** — Inativação com verificação de pendências (pedidos em aberto)
+- **Gerenciar Notas** — Lançamento de notas por disciplina, com bloqueio para matrículas trancadas e notas consolidadas
+
+### Regras de Negócio Implementadas
+
+- ✅ Aluno deve ter **≥ 18 anos** para se matricular
+- ✅ Boleto é **gerado automaticamente** ao realizar matrícula
+- ✅ Não é possível **inativar fornecedor** com pedidos pendentes
+- ✅ Nota **consolidada** não pode ser alterada
+- ✅ Não é possível **lançar notas** para aluno com matrícula trancada
+- ✅ Docentes podem ser **ativados/inativados** com confirmação
+
+
+## Status do Projeto & Avaliação da POC
+
+A presente implementação consiste na **Proof of Concept (POC)** do Sistema de Gestão Universitária (SGU). O objetivo principal desta versão foi validar a arquitetura técnica adotada e demonstrar a viabilidade dos fluxos operacionais centrais.
+
+### Backlog de Evoluções Futuras
+
+Para a evolução do sistema rumo a uma versão de produção (*Production-Ready*), os seguintes pontos ficam mapeados para desenvolvimento futuro:
+
+1. **Autenticação e Controle de Acesso (RBAC):**
+   - Implantação de autenticação via JWT/Session com diferentes níveis de acesso (ex: *Administrador/Secretário* vs. *Docente*) para atender às diretrizes da LGPD e restrição de pautas acadêmicas.
+2. **Infraestrutura e Persistência:**
+   - Migração completa do banco de dados em memória/desenvolvimento para ambiente gerenciado (PostgreSQL) com migrações automatizadas.
 
 ## 🛠️ Tecnologias Utilizadas
 
