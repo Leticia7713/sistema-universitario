@@ -205,6 +205,14 @@ sistema-universitario/
 
 ---
 
+## Vídeo da aplicação
+
+
+
+https://github.com/user-attachments/assets/5cfeab58-7031-4146-af48-db8fda0a403e
+
+
+
 ## 📝 Licença
 
 Este projeto foi desenvolvido para fins acadêmicos como parte do Projeto Integrador do curso de Análise e Desenvolvimento de Sistemas do SENAC.
