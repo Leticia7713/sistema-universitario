@@ -23,7 +23,7 @@
 ## 🔄 Revisita do Projeto (1ª Entrega → 2ª Entrega)
 
 > **⚠️ Nota sobre a Alteração do Escopo:**  
-> Inicialmente, o projeto visava desenvolver uma plataforma digital de operações bancárias integradas ao WhatsApp para o público idoso, com autenticação facial e chatbot guiado por áudio. Devido à acentuada complexidade técnica e à necessidade de integração com grandes plataformas proprietárias (Meta/WhatsApp Business API e ferramentas externas de biometria) para viabilizar uma Prova de Conceito funcional no prazo da 2ª entrega, o grupo optou por redefinir o tema para o **Sistema de Gestão Universitária (UniGestão)**.
+> Inicialmente, o projeto visava desenvolver uma plataforma digital de operações bancárias integradas ao WhatsApp para o público idoso, com autenticação facial e chatbot guiado por áudio. Devido à acentuada complexidade técnica e à necessidade de integração com grandes plataformas proprietárias (Meta/WhatsApp Business API e ferramentas externas de biometria) para viabilizar uma Prova de Conceito funcional no prazo da 2ª entrega, o grupo optou por redefinir o tema para o **Sistema de Gestão Universitária (UniGestão)**. O documento referente à Etapa I do Sistema de Gestão Universitária está disponível no arquivo PROJETO-INTEGRADOR-GRUPO-9-ETAPA-1.pdf neste repositório e no link ao final deste README.
 
 Na primeira etapa, desenvolvemos a especificação, ideação e fundamentação do sistema de gestão universitária conforme as normas ABNT, incluindo:
 
@@ -215,7 +215,7 @@ https://github.com/user-attachments/assets/5cfeab58-7031-4146-af48-db8fda0a403e
 
 ---
 
-## PDF da projeto
+## PDF do projeto (Etapa I)
 
 [Clique aqui para baixar o PDF](https://github.com/Leticia7713/sistema-universitario/blob/b3134fcfe805642b63bfd5498d70cd581e32c0a8/PROJETO-INTEGRADOR-GRUPO-9-ATUALIZADO.pdf)
 
