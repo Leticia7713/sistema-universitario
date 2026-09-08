@@ -213,6 +213,14 @@ https://github.com/user-attachments/assets/5cfeab58-7031-4146-af48-db8fda0a403e
 
 
 
+---
+
+## PDF da projeto
+
+[Clique aqui para baixar o PDF](https://github.com/Leticia7713/sistema-universitario/blob/b3134fcfe805642b63bfd5498d70cd581e32c0a8/PROJETO-INTEGRADOR-GRUPO-9-ATUALIZADO.pdf)
+
+
+
 ## 📝 Licença
 
 Este projeto foi desenvolvido para fins acadêmicos como parte do Projeto Integrador do curso de Análise e Desenvolvimento de Sistemas do SENAC.
